@@ -78,7 +78,6 @@
         <p><strong>E-mail:</strong> <?= $pessoa2->email ?></p>
         <p><strong>Idade:</strong> <?= $pessoa2->idade ?></p>
     </article>
-
 </section>
 </body>
 </html>
