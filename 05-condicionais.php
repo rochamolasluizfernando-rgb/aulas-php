@@ -59,6 +59,25 @@ $qtdCritica = 5; // mínimo necessário no estoque
     }
 ?>
 
+<hr>
 
+    <h2>Condicional ENCADEADA: <code>if, elseif, else</code></h2>
+<?php 
+$idade = 15;
+$situacao = ""; // opcional (nem é obrigatório declarar previamente)
+
+if($idade <= 12){
+    $situacao = "criança";
+} elseif ($idade <= 17){
+  $situacao = "adolescente";
+} elseif ($idade <= 59){
+  $situacao = "adulto";
+} else {
+    $situacao = "idoso";
+}
+?>
+    <p>O usuário tem <?= $idade ?> anos e é <?= $situacao ?>.</p>
+
+    
 </body>
 </html>
