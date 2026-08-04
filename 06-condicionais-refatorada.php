@@ -13,10 +13,6 @@
     <h1>(Refatorada) Trabalhando com estruturas condicionais</h1>
     <hr>
 
-    <!-- Lembrete: ao usar condicionais, muitas vezes 
-    também usaremos operadores relacionais:
-    <, <=, >, >=, ==, !=, ===, !== -->
-
     <h2>Condicionais SIMPLES: <code>if</code></h2>
 <?php 
     $numero = 50;
@@ -26,14 +22,15 @@
 <?php 
     }
 ?>
-
     <hr>
 
     <h2>Condicional COMPOSTA: <code>if/else</code></h2>
 <?php 
 $produto = "Ultrabook";
-$qtdEmEstoque = 0; //o que temos a disposição
-$qtdCritica = 5; // mínimo necessário no estoque
+$qtdEmEstoque = 0; 
+$qtdCritica = 5; 
+$idade = 15;
+$opcao = 1;
 ?>
     <h3><?= $produto ?></h3>
     <p><b>Quantidade em estoque: </b><?= $qtdEmEstoque ?></p>
@@ -43,12 +40,12 @@ $qtdCritica = 5; // mínimo necessário no estoque
         <p class="comprar">É necessário comprar/repor</p>
 
 <?php 
-        if ($qtdEmEstoque === 0) {
+        if ($qtdEmEstoque === 0) :
 ?>
             <p><mark class="comprar">🚨URGENTE!</mark></p>
 <?php      
         endif;
-    else 
+    else:
 ?>
         <p class="normal">Estoque normal.</p>
 <?php
@@ -69,7 +66,7 @@ $qtdCritica = 5; // mínimo necessário no estoque
     <h2>Condicional ENCADEADA: <code>if, elseif, else</code></h2>
 <?php 
 $idade = 15;
-$situacao = ""; // opcional (nem é obrigatório declarar previamente)
+$situacao = ""; 
 
 if($idade <= 12){
     $situacao = "criança";
@@ -85,16 +82,17 @@ if($idade <= 12){
 
     <h3>Usando os comandos <code>switch/case/default/break</code></h3>
 <?php 
-/* Protótipo de chatbot
-Opções: 1 (informações), 2 (reclamação), 3 (elogio), X (inválida) */
-$opcao = 1; // entrada simulada
+$opcao = 1; 
 
 switch ($opcao) {
-    case 1: echo "<p>Legal, o que quer saber?</p>"; break;
-    case 2: echo "<p>Que pena, o que houve?</p>"; break;
-    case 3: echo "<p>Que bacana, pode falar!</p>"; break;
-    default: echo "<p>Não entendi... vou chamar alguém</p>"; break;
+    case 1: $texto = "<p>Legal, o que quer saber?</p>"; break;
+    case 2: $texto = "Que pena, o que houve?"; break;
+    case 3: $texto = "Que bacana, pode falar!"; break;
+    default: $texto = "Não entendi... vou chamar alguém"; break;
 }
 ?>
+<p><?= $texto ?></p>
+
+
 </body>
 </html>
