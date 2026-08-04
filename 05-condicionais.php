@@ -57,6 +57,14 @@ $qtdCritica = 5; // mínimo necessário no estoque
     } else {
         echo "<p class=\"normal\">Estoque normal.</p>";
     }
+
+    //if/else versão abreviada (shorthand if) ?:
+    $excessoDeEstoque = $qtdEmEstoque > 100 ? "sim" : "não";
+    echo $excessoDeEstoque;
+
+    echo "<br>";
+    
+    echo $qtdEmEstoque > 100 ? "sim" : "não";
 ?>
 
 <hr>
