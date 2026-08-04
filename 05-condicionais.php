@@ -78,6 +78,18 @@ if($idade <= 12){
 ?>
     <p>O usuário tem <?= $idade ?> anos e é <?= $situacao ?>.</p>
 
-    
+    <h3>Usando os comandos <code>switch/case/default/break</code></h3>
+<?php 
+/* Protótipo de chatbot
+Opções: 1 (informações), 2 (reclamação), 3 (elogio), X (inválida) */
+$opcao = 1; // entrada simulada
+
+switch ($opcao) {
+    case 1: echo "<p>Legal, o que quer saber?</p>"; break;
+    case 2: echo "<p>Que pena, o que houve?</p>"; break;
+    case 3: echo "<p>Que bacana, pode falar!</p>"; break;
+    default: echo "<p>Não entendi... vou chamar alguém</p>"; break;
+}
+?>
 </body>
 </html>
