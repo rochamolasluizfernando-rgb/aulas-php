@@ -40,7 +40,7 @@
     <h2>Condicional COMPOSTA: <code>if/else</code></h2>
 <?php 
 $produto = "Ultrabook";
-$qtdEmEstoque = 3; //o que temos a disposição
+$qtdEmEstoque = 0; //o que temos a disposição
 $qtdCritica = 5; // mínimo necessário no estoque
 ?>
     <h3><?= $produto ?></h3>
@@ -48,10 +48,15 @@ $qtdCritica = 5; // mínimo necessário no estoque
 
 <?php 
     if ($qtdEmEstoque < $qtdCritica) {
-        echo "<p>É necessário comprar/repor</p>";
+        echo "<p class=\"comprar\">É necessário comprar/repor</p>";
+    
+        // Condicional ANINHADA (ela está dentro de outro if)
+        if ($qtdEmEstoque === 0) {
+            echo "<p><mark class=\"comprar\">🚨URGENTE!</mark></p>";
+        }
     } else {
-        echo "<p>Estoque normal.</p>";
-    } 
+        echo "<p class=\"normal\">Estoque normal.</p>";
+    }
 ?>
 
 
