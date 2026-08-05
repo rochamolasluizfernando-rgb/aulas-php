@@ -11,7 +11,6 @@
         margin: auto;
         width: 50%;
         border: solid 1px;
-        color: black;
     }
 
     .infantil { background-color: pink; }
@@ -40,7 +39,7 @@ else {
     $estilo = "melhor-idade";
 }
 ?>
-<section>
+<section class="<?= $estilo ?>">
     <h2>Categoria: <?= $categoria ?> </h2>
     <p>Idade: <b><?= $idade ?> anos</b></p>
     <p>Preço: R$ <?= number_format($ingresso, 2) ?></p>
