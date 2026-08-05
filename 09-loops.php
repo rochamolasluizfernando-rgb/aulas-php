@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops no PHP</title>
+</head>
+<body>
+    <h1>Trabalhando com comandos de repetição</h1>
+    <hr>
+
+    <h2>While (enquanto)</h2>
+    <p>Executa ações repetidas vezes <b>enqaunto</b> 
+    a condição for <b>verdadeira</b></p>
+<?php 
+$i = 1;
+while($i <= 5): // ou {
+?>
+    <p>Parágrafo: <?= $i ?></p>
+<?php 
+    $i++;
+endwhile; // ou }
+?>
+
+    <hr>
+
+    <h2>do/while(faça/enquanto)</h2>
+    <p>Executa ações pelo menos <b>uma vez</b> e, se 
+    a condição for verdadeira, continua executando 
+    outras vezes.</p>
+
+<?php 
+$j = 1;
+do {
+?>
+    <div>
+        <h3>Título qualquer...</h3>
+        <p>Bloco <?= $j ?></p>
+    </div>
+<?php 
+    $j++;
+} while ($j <= 3)
+?>
+</body>
+</html>
