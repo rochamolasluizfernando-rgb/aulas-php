@@ -55,7 +55,7 @@ do {
         <summary>Pergunta <?= $i ?></summary>
         <p>Resposta <?= $i ?></p>
     </details>
-<?php } ?>
+<?php } // ou endfor; ?>
 </section>
 </body>
 </html>
