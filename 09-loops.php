@@ -41,5 +41,21 @@ do {
     $j++;
 } while ($j <= 3)
 ?>
+
+    <hr>
+
+    <h2>for (para)</h2>
+    <p>Executa ações de acordo com uma <b>quantidade 
+    determinada de vezes</b></p>
+
+<section>
+    <h3>FAQ (Perguntas Frequentes)</h3>
+<?php for($i = 1; $i <= 5; $i++){ ?>
+    <details>
+        <summary>Pergunta <?= $i ?></summary>
+        <p>Resposta <?= $i ?></p>
+    </details>
+<?php } ?>
+</section>
 </body>
 </html>
