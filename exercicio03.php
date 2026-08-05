@@ -21,8 +21,7 @@
     <h1>Exercício 03: condicionais e uso do PHP intercalado com HTML</h1>
     <hr>
 <?php 
-$idade = 60;
-
+$idade = 80;
 if($idade < 12){
     $ingresso = 25.00;
     $categoria = "Infantil";
@@ -44,6 +43,5 @@ else {
     <p>Idade: <b><?= $idade ?> anos</b></p>
     <p>Preço: R$ <?= number_format($ingresso, 2) ?></p>
 </section>
-    
 </body>
 </html>
