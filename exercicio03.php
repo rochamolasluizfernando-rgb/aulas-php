@@ -6,34 +6,17 @@
     <title>Exercício 03: condicionais e uso do PHP intercalado com HTML</title>
 </head>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        padding: 20px;
+    section {
+        padding: 4px;
+        margin: auto;
+        width: 50%;
+        border: solid 1px;
+        color: black;
     }
 
-    .ingresso {
-        width: 350px;
-        padding: 20px;
-        border-radius: 10px;
-        border: 3px solid #333;
-        margin: 20px auto;
-    }
-
-    .infantil {
-        background-color: #b3e5fc;
-        border-color: #0288d1;
-    }
-
-    .adulto {
-        background-color: #c8e6c9;
-        border-color: #388e3c;
-    }
-
-    .melhor-idade {
-        background-color: #fff9c4;
-        border-color: #fbc02d;
-    }
+    .infantil { background-color: pink; }
+    .adulto { background-color: blue; }
+    .melhor-idade { background-color: yellow; }
 </style>
 <body>
     <h1>Exercício 03: condicionais e uso do PHP intercalado com HTML</h1>
@@ -42,36 +25,26 @@
 $idade = 60;
 
 if($idade < 12){
+    $ingresso = 25.00;
     $categoria = "Infantil";
-    $valor = 25.00;
-    $classe = "infantil";
+    $estilo = "infantil";
 } 
 elseif($idade < 60){
+    $ingresso = 40.00;
     $categoria = "Adulto";
-    $valor = 40.00;
-    $classe = "adulto";
+    $estilo = "adulto";
 }
 else {
+    $ingresso = 20.00;
     $categoria = "Melhor Idade";
-    $valor = 20.00;
-    $classe = "melhor-idade";
+    $estilo = "melhor-idade";
 }
-
 ?>
-
-<div class="ingresso <?= $classe ?>">
-    <h2>Ingresso do Show</h2>
-
-    <p><strong>Idade:</strong> <?= $idade ?> anos</p>
-
-    <p><strong>Categoria:</strong> <?= $categoria ?> </p>
-
-    <p>
-        <strong>Valor:</strong>
-        R$ <?= number_format($valor, 2) ?>
-    </p>
-</div>
-
-</div>
+<section>
+    <h2>Categoria: <?= $categoria ?> </h2>
+    <p>Idade: <b><?= $idade ?> anos</b></p>
+    <p>Preço: R$ <?= number_format($ingresso, 2) ?></p>
+</section>
+    
 </body>
 </html>
