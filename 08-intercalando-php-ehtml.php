@@ -46,5 +46,6 @@ if($idade >= 18){
 <?php 
 } 
 ?>
+    <p> <?= $htmlSaida ?> é <?= $palavra ?> de idade</p>
 </body>
 </html>
