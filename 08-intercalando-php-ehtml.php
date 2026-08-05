@@ -35,6 +35,16 @@ if ($idade >= 18) {
 }
 ?>
     <h3>Resultado (usando PHP só onde é necessário):</h3>
-
+<?php 
+if($idade >= 18){
+?>
+    <p><b> é maior de idade</b></p>
+<?php 
+} else {
+?>
+    <p><i><?= $aluno ?></i> é menor de idade</p>
+<?php 
+} 
+?>
 </body>
 </html>
