@@ -21,8 +21,41 @@ $meses = ["Janeiro", "Fevereiro", "Março",
     <ol>
 <?php for($i = 0; $i < count($meses); $i++): ?>
         <li><?= $meses[$i] ?></li>
-    </ol>
 <?php endfor; ?>
+    </ol>
+
+    <hr>
+
+    <h2>Usando o loop for para acessar uma matriz (array de arrays)</h2>
+<?php 
+$planoDeEstudos = [
+    ["JS Avançado", "Node.js", "Next.js"],
+    ["PHP", "Orientação a OBjetos"],
+    ["Teoria das Cores", "Photoshop com IA", "UX/UI"]
+];
+
+$linhas = count($planoDeEstudos);
+
+for($i = 0; $i < $linhas; $i++): // acessa cada linha
+    $colunas = count($planoDeEstudos[$i]);
+    for($j = 0; $j < $colunas; $j++): // acessa cada coluna
+?>
+    <p><?= $planoDeEstudos [$i][$j] ?></p>
+<?php 
+    endfor; // fim do acesso a cada coluna
+endfor; // fim do acesso a cada linha
+?>
+    <hr>
+
+    <h2>Usando o loop foreach para arrays</h2>
+<?php 
+$alunos = ["Thiago", "Adela", "Renan", "Pérola"];
+foreach($alunos as $aluno): 
+?>
+    <p> <?= $aluno ?> </p>
+<?php 
+endforeach;
+?>
 
 
 </div>
