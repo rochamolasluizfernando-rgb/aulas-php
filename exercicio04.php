@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,11 +43,9 @@ $linguagens = [
     <ul>
     <?php foreach ($linguagens as $linguagem) { ?>
         <li>
-            <p>
                 <b>ID:</b> <?= $linguagem["id"] ?><br>
                 <b>Linguagem:</b> <?= $linguagem["nome"] ?><br>
                 <b>Descrição:</b> <?= $linguagem["descricao"] ?>
-            </p>
         </li>
     <?php } ?>
     </ul>
