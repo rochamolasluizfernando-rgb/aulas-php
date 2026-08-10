@@ -57,7 +57,28 @@ foreach($alunos as $aluno):
 endforeach;
 ?>
 
+    <hr>
 
+    <h2>Usando foreach para array associativo</h2>
+<?php 
+$curso = [
+    "titulo" => "Gastronomia",
+    "carga_horaria" => 200,
+    "descricao" => "Aprender o básico sobre a área"
+];
+foreach($curso as $chave => $valor):
+?>
+    <p><b><?= $chave?></b>: <?= $valor ?></p>
+<?php 
+endforeach;
+
+// Extraindo somente o valor
+foreach($curso as $valor):
+?>
+    <p><i><?= $valor ?></i></p>
+<?php 
+endforeach;
+?>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.
