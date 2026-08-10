@@ -79,6 +79,18 @@ foreach($curso as $valor):
 <?php 
 endforeach;
 ?>
+
+    <hr>
+    <h2>Usando foreach em uma matriz</h2>
+<?php 
+foreach($planoDeEstudos as $categoria): // cada linha (categoria)
+    foreach($categoria as $assunto): // cada coluna (assunto/curso)
+?>
+    <p><?= $assunto ?></p>
+<?php 
+    endforeach;
+endforeach;
+?>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.
