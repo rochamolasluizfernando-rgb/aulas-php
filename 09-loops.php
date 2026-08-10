@@ -7,12 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Trabalhando com comandos de repetição</h1>
-    <hr>
+    <div class="container">
+        <h1>Trabalhando com comandos de repetição</h1>
+        <hr>
 
-    <h2>While (enquanto)</h2>
-    <p>Executa ações repetidas vezes <b>enqaunto</b> 
-    a condição for <b>verdadeira</b></p>
+        <h2>While (enquanto)</h2>
+        <p>Executa ações repetidas vezes <b>enqaunto</b> 
+        a condição for <b>verdadeira</b></p>
+
 <?php 
 $i = 1;
 while($i <= 5): // ou {
