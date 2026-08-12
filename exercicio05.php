@@ -37,7 +37,9 @@
         document.getElementById("notas").innerHTML =
             `Notas:${nota1},${nota2},${nota3}`;
         document.getElementById("media").innerHTML =
-            `Média:${media.toFixed(2)`;
+            `Média:${media.toFixed(2)}`;
+        document.getElementById("situacao").innerHTML =
+            `Situação: ${situacao}`;
     </script>
 </body>
 </html>
