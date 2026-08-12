@@ -100,12 +100,12 @@ function somar( $valor1, $valor2 ){
     <hr>
 
     <h2>Arrow Function</h2>
-    <?php 
+    <?php // Repare que omitimos as chaves e o return
     $subtrair = fn(float $valor1, float $valor2):float => $valor1 - $valor2
     ?>
     <p>Exemplo: <?= $subtrair(10, 1) ?></p>
 
-    
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js
