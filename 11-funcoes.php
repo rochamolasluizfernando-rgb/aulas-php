@@ -83,6 +83,7 @@ function somar( $valor1, $valor2 ){
     }
     ?>
     <p>Número 10: <?= verificarNegativo(10) ?></p>
+    <p>Número -10: <?= verificarNegativo(-10) ?></p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js
