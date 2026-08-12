@@ -84,6 +84,18 @@ function somar( $valor1, $valor2 ){
     ?>
     <p>Número 10: <?= verificarNegativo(10) ?></p>
     <p>Número -10: <?= verificarNegativo(-10) ?></p>
+    <!-- <p>Teste para erro: < ?= verificarNegativo("teste") ?></p> -->
+
+    <hr>
+
+    <h2>Função anônima (ou lambda)</h2>
+    <?php 
+    $multiplicar = function(float $valor1, float $valor2): float {
+        return $valor1 * $valor2;
+    };
+    ?>
+    <!-- Repare no uso do $ junto com o nome da função: -->
+    <p>Exemplo: <?= $multiplicar(10, 2) ?></p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js
