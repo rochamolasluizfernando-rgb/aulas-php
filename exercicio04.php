@@ -39,16 +39,24 @@ $linguagens = [
     ]
 ];
 ?>
-    <h2>Lista de Linguagens</h2>
-    <ul>
-    <?php foreach ($linguagens as $linguagem) { ?>
-        <li>
-                <b>ID:</b> <?= $linguagem["id"] ?><br>
-                <b>Linguagem:</b> <?= $linguagem["nome"] ?><br>
-                <b>Descrição:</b> <?= $linguagem["descricao"] ?>
-        </li>
-    <?php } ?>
-    </ul>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Linguagem</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($linguagens as $linguagem): ?>
+                <tr>
+                    <td><?php echo $linguagem["id"]; ?></td>
+                    <td><?php echo $linguagem["nome"]; ?></td>
+                    <td><?php echo $linguagem["descricao"]; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
