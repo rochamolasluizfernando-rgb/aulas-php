@@ -63,7 +63,45 @@
     ?>
         <pre><?php var_dump($categorias) ?></pre>
         <pre><?php var_dump($categoriasUnicas) ?></pre>
+        <hr>
+        <h2>array_merge</h2>
+        <p>Junta dados de arrays diferentes.</p>
+    <?php 
+    $produtosFilialNorte = ["Mouse", "Teclado"];
+    $produtosFilialSul = ["Monitor", "Webcam", "Pendrive"];
 
+    // $produtos = array_merge($produtosFilialNorte, $produtosFilialSul);
+    // Podemos combinar funções de array (abaixo, merge e depois unique)
+    $produtos = array_unique(
+        array_merge($produtosFilialNorte, $produtosFilialSul)
+    );
+    ?>
+        <pre><?php var_dump($produtos) ?></pre>
+
+        <hr>
+        <h2>array_combine</h2>
+        <p>Cria um novo array a partir de uma lista de valores e uma lista de chaves.</p>
+    <?php 
+    // Lista de chaves
+    $games = ["Super_Mario", "Sonic", "Final_Fantasy"];
+
+    // Lista de valores
+    $precos = [99, 50, 129];
+
+    $catalogo = array_combine($games, $precos);
+    ?>
+        <pre><?php var_dump($catalogo) ?></pre>
+
+        <hr>
+
+        <h2>array_map</h2>
+        <p>Percorre cada elemento de um array, executa uma função (chamada de callback) e 
+        gera um novo array com os resultados.</p>
+    <?php 
+    $catalogoComDesconto = array_map(function (){
+        
+    }, $catalogo);
+    ?>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
