@@ -98,10 +98,14 @@
         <p>Percorre cada elemento de um array, executa uma função (chamada de callback) e 
         gera um novo array com os resultados.</p>
     <?php 
-    $catalogoComDesconto = array_map(function (){
-        
+    $catalogoComDesconto = array_map(function (float $preco):float {
+        return $preco - $preco * 0.10;
     }, $catalogo);
     ?>
+        <pre><?php var_dump($catalogoComDesconto) ?></pre>
+
+
+        <hr>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
