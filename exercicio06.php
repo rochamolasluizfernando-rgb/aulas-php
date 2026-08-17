@@ -162,14 +162,69 @@
         <strong>false</strong>.
     </p>
 
-    <h2>Conclusão</h2>
+    <h2>5. Desafio - Exemplo prático</h2>
+ 
+<p>
+    Neste exemplo, vamos criar uma data específica utilizando a função
+    <strong>mktime()</strong>, obter as informações dessa data com
+    <strong>getdate()</strong> e utilizar <strong>time()</strong> para
+    descobrir o timestamp atual.
+</p>
+ 
+<?php
+ 
+// Criando uma data específica
+$dataEvento = mktime(14, 30, 0, 12, 25, 2026);
+ 
+// Obtendo as informações da data criada
+$dadosEvento = getdate($dataEvento);
+ 
+// Obtendo o timestamp atual
+$agora = time();
+ 
+echo "<h3>Dados do evento</h3>";
+ 
+echo "Dia: " . $dadosEvento["mday"] . "<br>";
+echo "Mês: " . $dadosEvento["mon"] . "<br>";
+echo "Ano: " . $dadosEvento["year"] . "<br>";
+echo "Hora: " . $dadosEvento["hours"] . "<br>";
+echo "Minuto: " . $dadosEvento["minutes"] . "<br>";
+ 
+echo "<br>";
+ 
+echo "Data completa: " . date("d/m/Y H:i:s", $dataEvento);
+ 
+echo "<h3>Comparação com a data atual</h3>";
+ 
+if ($dataEvento > $agora) {
+    echo "O evento ainda vai acontecer.";
+} elseif ($dataEvento == $agora) {
+    echo "O evento está acontecendo neste momento.";
+} else {
+    echo "O evento já aconteceu.";
+}
+ 
+?>
+ 
+<h3>Análise do resultado</h3>
+ 
+<p>
+    A função <strong>mktime()</strong> foi utilizada para criar a data
+    de 25/12/2026 às 14:30:00.
+</p>
+ 
+<p>
+    Depois, a função <strong>getdate()</strong> recebeu o timestamp criado
+    por <strong>mktime()</strong> e permitiu acessar separadamente o dia,
+    mês, ano, hora e minuto do evento.
+</p>
+ 
+<p>
+    Por fim, a função <strong>time()</strong> foi utilizada para obter o
+    timestamp do momento atual. O programa compara os dois timestamps para
+    descobrir se o evento já aconteceu ou ainda acontecerá.
+</p>
 
-     <p>
-        As funções pesquisadas são utilizadas para trabalhar com datas e
-        horários no PHP. A função <strong>time()</strong> obtém o timestamp
-        atual, <strong>getdate()</strong> separa informações de uma data,
-        <strong>mktime()</strong> transforma uma data e horário em timestamp
-        e <strong>checkdate()</strong> verifica se uma data é válida.
-    </p>
+
 </body>
 </html>
