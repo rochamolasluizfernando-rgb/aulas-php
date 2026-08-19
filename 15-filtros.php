@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filtros</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+
-    LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 </head>
 <body>
-    <div class="conteiner">
+    <div class="container">
     <h1>Filtros para validação e sanitização</h1>
     <hr>
     <p>Filtros são recursos de análise e limpeza de dados aplicados através de funções 
@@ -33,7 +33,7 @@ $emailValido = filter_var($email, FILTER_VALIDATE_EMAIL);
 
     <h3>FILTER_VALIDATE_URL</h3>
 <?php 
-$redeSocial = "httpslinkedin.com /in/thiagobsantos";
+$redeSocial = "https://linkedin.com/in/thiagobsantos";
 $redeSocialValida = filter_var($redeSocial, FILTER_VALIDATE_URL)
 ?>
     <pre><?php var_dump($redeSocialValida) ?></pre>
@@ -41,7 +41,45 @@ $redeSocialValida = filter_var($redeSocial, FILTER_VALIDATE_URL)
     <a href="<?php $redeSocial ?>" class="btn btn-info">Me siga no linkedIn</a>
 <?php endif; ?>
 
-    </div>
+    <hr> 
+
+    <h2>Sanitização</h2>
+    <h3>FILTER_SANITIZE_EMAIL</h3>
+<?php 
+$contato = " /thiago.bsantos @sp.;senac.br ( >";
+$contatoSanitizado = filter_var($contato, FILTER_SANITIZE_EMAIL);
+?>
+    <p>Contato <b>sem</b> sanitização: <?php $contato ?></p>
+    <p>Contato <b>com</b> sanitização: <?php $contatoSanitizado ?></p>
+
+    <h3>FILTER_SANITIZE_FULL_SPECIAL_CHARS</h3>
+<?php 
+// Simulando uma entrada de dados de código HTML
+$nomeCompleto = "<img src='https://ogimg.infoglobo.com.br/rioshow/25088054-e75-c90/FT1086A/pacocacaseira.jpg'>";
+    
+$nomeCompletoSanitizado = filter_var(
+    $nomeCompleto, FILTER_SANITIZE_FULL_SPECIAL_CHARS)
+?>
+    <p>Nome informado: <?= $nomeCompletoSanitizado ?></p>
+
+<?php 
+// Simulando um ataque de injeção de código JS (XSS - Cross Site Scripting)
+$ataqueXSS = "<script>location= 'https://sp.senac.br'</script>";
+?>
+    <p>Teste:
+        <?php filter_var($ataqueXSS, FILTER_SANITIZE_SPECIAL_CHARS) ?>
+    </p>
+
+    <h3>htmlspecialchars()</h3>
+    <p>Pode ser usado como alternativa ao filtro.</p>
+<?php 
+$nomeCompletoCorrigido = htmlspecialchars($nomeCompleto);
+$ataqueEvitado = htmlspecialchars($ataqueXSS);
+?>
+    <p>Nome completo corrigido: <?= $nomeCompletoCorrigido ?></p>
+    <p>Ataque evitado: <?= $ataqueEvitado ?></p>
+
+</div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+
