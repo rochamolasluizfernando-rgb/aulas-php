@@ -104,8 +104,34 @@
     ?>
         <pre><?php var_dump($catalogoComDesconto) ?></pre>
 
+        <hr>
+
+        <h2>array_column</h2>
+        <p>Retorna um novo array com os valores de uma determinada 
+        chave associativa.</p>
+    <?php 
+    $servicos = [
+        ["codigo" => 3, "tipo" => "Limpeza", "status" => "Concluído"],
+        ["codigo" => 12, "tipo" => "Manutenção", "status" => "Concluído"],
+        ["codigo" => 1, "tipo" => "Reparo", "status" => "Pendente"],
+        ["codigo" => 7, "tipo" => "Consultoria", "status" => "Concluído"],
+        ["codigo" => 4, "tipo" => "Instalação", "status" => "Concluído"]
+    ];
+
+    $tiposServicos = array_column($servicos, "tipo");
+    ?>
+        <pre><?php var_dump($tiposServicos) ?></pre>
 
         <hr>
+
+        <h2>array_filter()</h2>
+        <p>Retorna valores para um novo array baseado em alguma condição/critério.</p>
+    <?php 
+    $servicosConcluidos = array_filter(
+        $servicos, fn($servico) => $servico["status"] === "Concluído"
+    );
+    ?>
+        <pre><?php var_dump($servicosConcluidos) ?></pre>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
