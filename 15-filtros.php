@@ -38,7 +38,7 @@ $redeSocialValida = filter_var($redeSocial, FILTER_VALIDATE_URL)
 ?>
     <pre><?php var_dump($redeSocialValida) ?></pre>
 <?php if($redeSocialValida): ?>
-    <a href="<?php $redeSocial ?>" class="btn btn-info">Me siga no linkedIn</a>
+    <a href="<?= $redeSocial ?>" class="btn btn-info">Me siga no linkedIn</a>
 <?php endif; ?>
 
     <hr> 
@@ -49,16 +49,16 @@ $redeSocialValida = filter_var($redeSocial, FILTER_VALIDATE_URL)
 $contato = " /thiago.bsantos @sp.;senac.br ( >";
 $contatoSanitizado = filter_var($contato, FILTER_SANITIZE_EMAIL);
 ?>
-    <p>Contato <b>sem</b> sanitização: <?php $contato ?></p>
-    <p>Contato <b>com</b> sanitização: <?php $contatoSanitizado ?></p>
+    <p>Contato <b>sem</b> sanitização: <?= $contato ?></p>
+    <p>Contato <b>com</b> sanitização: <?= $contatoSanitizado ?></p>
 
     <h3>FILTER_SANITIZE_FULL_SPECIAL_CHARS</h3>
 <?php 
 // Simulando uma entrada de dados de código HTML
-$nomeCompleto = "<img src='https://ogimg.infoglobo.com.br/rioshow/25088054-e75-c90/FT1086A/pacocacaseira.jpg'>";
+$nomeCompleto = "<img srcimg.infoglobo.com.br/rioshow/25088054-e75-c90/FT1086A/pacocacaseira.jpg'>";
     
 $nomeCompletoSanitizado = filter_var(
-    $nomeCompleto, FILTER_SANITIZE_FULL_SPECIAL_CHARS)
+    $nomeCompleto, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 ?>
     <p>Nome informado: <?= $nomeCompletoSanitizado ?></p>
 
@@ -67,7 +67,7 @@ $nomeCompletoSanitizado = filter_var(
 $ataqueXSS = "<script>location= 'https://sp.senac.br'</script>";
 ?>
     <p>Teste:
-        <?php filter_var($ataqueXSS, FILTER_SANITIZE_SPECIAL_CHARS) ?>
+        <?= filter_var($ataqueXSS, FILTER_SANITIZE_SPECIAL_CHARS) ?>
     </p>
 
     <h3>htmlspecialchars()</h3>
