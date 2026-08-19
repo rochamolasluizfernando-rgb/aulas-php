@@ -21,7 +21,20 @@
     <p>Estamos estudando no <?= ESCOLA ?> fazendo o curso <?= $curso ?>.</p>
     <p>Para fazer este curso o aluno deve ser maior idade.</p>
     <p>Como você <?= ALUNO ?> tem 20 anos, você é <?= verificarIdade(20) ?></p>
-    </div>
+    
+    <h2>Exemplo de carregamento de conteúdo parcial/fragmento</h2>
+    <section>
+        <h3>Título qualquer</h3>
+        <?php include "textos.php"; ?>
+
+        <ul>
+            <?php foreach($tecnologias as $tecnologia): ?>
+                <li><?= $tecnologia ?></li>
+            <?php endforeach ?>
+        </ul>
+    </section>
+
+</div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
