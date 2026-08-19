@@ -79,6 +79,31 @@ $ataqueEvitado = htmlspecialchars($ataqueXSS);
     <p>Nome completo corrigido: <?= $nomeCompletoCorrigido ?></p>
     <p>Ataque evitado: <?= $ataqueEvitado ?></p>
 
+    <h3>FILTER_SANITIZE_NUMBER_INT</h3>
+<?php 
+$idade = "Tenho 15 anos";
+$idade = filter_var($idade, FILTER_SANITIZE_NUMBER_INT);
+?>
+    <p>Idade: <?= $idade ?></p>
+
+    <h3>FILTER_SANITIZE_NUMBER_FLOAT</h3>
+<?php 
+$precoInicial = "R$ 1000.78";
+$desconto = "R$ 500.30";
+
+$precoInicial = filter_var(
+    $precoInicial, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION
+);
+
+$desconto = filter_var(
+    $desconto, FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION
+);
+
+$precoFinal = $precoInicial - $desconto;
+?>
+    <p>Preço inicial: <?= $precoInicial ?></p>
+    <p>Desconto de: <?= $desconto ?></p>
+    <p>Preço final: <?= $precoFinal ?> </p>
 </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
