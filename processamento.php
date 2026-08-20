@@ -13,9 +13,34 @@
     <h1>Recebimento e processamenro dos dados</h1>
     <hr>
 <?php 
-var_dump($_POST);
+// Capturando os dados de cada campo
+$nome = $_POST["nome"];
+$email = $_POST["email"];
+$idade = $_POST["idade"];
+$mensagem = $_POST["mensagen"];
+
+/* Operador ?? -> coalescência nula
+Caso nenhum interesse seja selecionado, 
+a variável guardará um array vazio */
+$interesses = $_POST["interesses"];
+
+// Caso nenhuma opção seja selecionada, o valor "não" fico como padrão 
+$informativos = $_POST["informativos"];
 ?>
-    
+    <h2>Dados recebidos</h2>
+    <p>Nome: <?= $nome ?></p>
+    <p>E-mail: <?= $email ?></p>
+    <p>Idade: <?= $idade ?></p>
+    <p>Mensagem: <?= $mensagem ?></p>
+
+    <?php if(!empty($interesses)): ?>
+    <p>Interesses: <?= implode(",", $interesses) ?></p>
+    <?php endif; ?>
+
+    <p>Informativos:
+        <?= $informativos === 'sim' ? "Sim" : "Não" ?>
+    </p>
+
 </div>
 
 
