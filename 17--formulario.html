@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Formulário HTML e processamento externo com PHP</h1>
         <hr>
-        <form action="" method="post">
+        <form action="processamento.php" method="post">
             <div class="mb-3">
                 <label class="form-label" for="nome">Nome:</label>
                 <input class="form-control" type="text" name="" id="nome">
@@ -26,19 +26,19 @@
                 <input class="form-control" type="number" name="idade" id="idade" min="0" max="130">
             </div>
             <div class="mb-3">
-                <p class="mb-2">Interesse:</p>
+                <p class="mb-2">Interesses:</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="interesses" id="html">
+                    <input class="form-check-input" type="checkbox" name="interesses[]" id="html" value="html">
                     <label for="html" class="form-check-label">HTML</label>
                 </div>
                 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="interesses" id="css">
+                    <input class="form-check-input" type="checkbox" name="interesses[]" id="css" value="css">
                     <label for="css" class="form-check-label">CSS</label>
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="interesses" id="javascript">
+                    <input class="form-check-input" type="checkbox" name="interesses[]" id="javascript" value="javascript">
                     <label for="javascript" class="form-check-label">JavaScript</label>
                 </div>
             </div>
@@ -46,11 +46,11 @@
             <div class="mb-3">
                 <p class="mb-2">Deseja receber informativos?</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="informativos" id="sim">
+                    <input class="form-check-input" type="radio" name="informativos" id="sim" value="sim">
                     <label for="sim" class="form-check-label">Sim</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="informativos" id="nao">
+                    <input class="form-check-input" type="radio" name="informativos" id="nao" value="nao">
                     <label for="nao" class="form-check-label">Não</label>
                 </div>
             </div>
