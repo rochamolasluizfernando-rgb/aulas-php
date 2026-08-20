@@ -1,6 +1,7 @@
 <?php require "includes/cabecalho.php" ?>
+    
+    <h2>Página de Planos</h2>
+    <p>Veja nossos planos...</p>
 
-    <h2>Página Planos</h2>
-    <p>Nossos planos estão à disposição</p>
-
-<?php require "includes/" ?>
+<?php require "includes/rodape.php" ?>
+    
